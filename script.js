@@ -1,4 +1,4 @@
-function gameboardObject() {
+function tictactoe() {
   let board = [
     ["e", "e", "e"],
     ["e", "e", "e"],
