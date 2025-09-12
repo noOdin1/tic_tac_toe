@@ -24,3 +24,6 @@ function gameboardObject() {
   return { place, printBoard };
 }
 
+let newGame = new gameboardObject();
+newGame.place("x", 1, 1);
+newGame.printBoard();
