@@ -50,5 +50,13 @@ let keyMap = {
   9: [2, 2],
 };
 
+function userKeyPress(event) {
+  if (event.key in keyMap) {
+    console.log("[userKeyPress] key: " + event.key + " is mapped");
+    return;
+  }
+  console.log("[userKeyPress] key not mapped");
+}
+
 newGame.place("x", 1, 1);
 newGame.printBoard();
