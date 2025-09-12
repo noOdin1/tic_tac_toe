@@ -6,6 +6,12 @@ function gameboardObject() {
   ];
 
   function place(mark, row, col) {
+    if (row < 0 || row > 2) {
+      return;
+    }
+    if (col < 0 || col > 2) {
+      return;
+    }
   }
 }
 
