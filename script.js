@@ -17,5 +17,9 @@ function gameboardObject() {
     }
   }
 
+  function printBoard() {
+    console.table(board);
+  }
+
 }
 
