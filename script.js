@@ -12,6 +12,10 @@ function gameboardObject() {
     if (col < 0 || col > 2) {
       return;
     }
+    if (mark == "x" || mark == "o") {
+      board[row][col] = mark;
+    }
   }
+
 }
 
