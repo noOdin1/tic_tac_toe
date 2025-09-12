@@ -68,3 +68,4 @@ console.log("value of x: " + x + ", y: " + y);
 document.addEventListener("keydown", userKeyPress);
 
 newGame.printBoard();
+console.table(keyMap);
