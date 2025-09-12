@@ -21,5 +21,6 @@ function gameboardObject() {
     console.table(board);
   }
 
+  return { place, printBoard };
 }
 
