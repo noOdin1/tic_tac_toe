@@ -65,4 +65,6 @@ newGame.place("o", 1, 2);
 let [x, y] = keyMap[1];
 console.log("value of x: " + x + ", y: " + y);
 
+document.addEventListener("keydown", userKeyPress);
+
 newGame.printBoard();
