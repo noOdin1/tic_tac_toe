@@ -5,5 +5,7 @@ function gameboardObject() {
     ["e", "e", "e"],
   ];
 
+  function place(mark, row, col) {
+  }
 }
 
