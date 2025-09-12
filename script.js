@@ -1,8 +1,8 @@
 function tictactoe() {
   let board = [
-    ["e", "e", "e"],
-    ["e", "e", "e"],
-    ["e", "e", "e"],
+    [" ", " ", " "],
+    [" ", " ", " "],
+    [" ", " ", " "],
   ];
 
   function place(mark, row, col) {
@@ -24,6 +24,5 @@ function tictactoe() {
   return { place, printBoard };
 }
 
-let newGame = new gameboardObject();
 newGame.place("x", 1, 1);
 newGame.printBoard();
