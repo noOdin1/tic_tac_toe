@@ -57,6 +57,7 @@ function userKeyPress(event) {
   }
   console.log("[userKeyPress] key not mapped");
 }
+const allowedKeys = ["q", "y"];
 
 function game() {
   let newGame = new tictactoe(); // initialize a new game
