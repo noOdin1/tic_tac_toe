@@ -54,13 +54,6 @@ const keyMap = {
   9: [0, 2],
 };
 
-function userKeyPress(event) {
-  if (event.key in keyMap) {
-    console.log("[userKeyPress] key: " + event.key + " is mapped");
-    return;
-  }
-  console.log("[userKeyPress] key not mapped");
-}
 const allowedKeys = ["q", "y"];
 
 function game() {
