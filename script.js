@@ -88,9 +88,9 @@ async function round() {
     if (userEntry in keyMap) {
       [x, y] = keyMap[userEntry];
 
-      if (newGame.getBoardPosition(x, y) == " ") {
-        newGame.place("x", x, y);
-        newGame.printBoard();
+      if (game.getBoardPosition(x, y) == " ") {
+        game.place("x", x, y);
+        game.printBoard();
       } else {
         console.log("[game] That position is occupied.");
       }
