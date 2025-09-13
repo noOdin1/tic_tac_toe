@@ -105,6 +105,7 @@ async function round() {
     }
     if (userEntry == "r") {
       game.resetBoard();
+      game.printBoard();
     }
   }
   console.log("[game] You have opted to quit");
