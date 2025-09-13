@@ -84,6 +84,7 @@ async function game() {
 
   while (userEntry != "q") {
     await userKeyEntry();
+    console.log("[game] userEntry: " + userEntry);
   }
 
   // newGame.place("x", 1, 1);
