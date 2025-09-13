@@ -58,16 +58,19 @@ function userKeyPress(event) {
   console.log("[userKeyPress] key not mapped");
 }
 
-let newGame = new tictactoe();
-newGame.place("x", 1, 1);
-newGame.place("o", 1, 2);
-// newGame.place("x",);
-let [x, y] = keyMap[1];
-console.log("value of x: " + x + ", y: " + y);
 function game() {
+  let newGame = new tictactoe(); // initialize a new game
+  let humanPlayer = new player();
+  let computerPlayer = new player();
 
-document.addEventListener("keydown", userKeyPress);
+  document.addEventListener("keydown", userKeyPress);
 
-newGame.printBoard();
-console.table(keyMap);
+  newGame.place("x", 1, 1);
+  newGame.place("o", 1, 2);
+  // newGame.place("x",);
+  let [x, y] = keyMap[1];
+  console.log("value of x: " + x + ", y: " + y);
+
+  newGame.printBoard();
+  console.table(keyMap);
 }
