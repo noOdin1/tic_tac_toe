@@ -85,16 +85,7 @@ async function game() {
   while (userEntry != "q") {
     await userKeyEntry();
     console.log("[game] userEntry: " + userEntry);
-  }
 
-  // newGame.place("x", 1, 1);
-  // newGame.place("o", 1, 2);
-  // // newGame.place("x",);
-  // let [x, y] = keyMap[1];
-  // console.log("value of x: " + x + ", y: " + y);
-  //
-  // newGame.printBoard();
-  // console.table(keyMap);
 }
 
 game();
