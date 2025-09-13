@@ -83,6 +83,7 @@ async function game() {
   }
 
   while (userEntry != "q") {
+    await userKeyEntry();
   }
 
   // newGame.place("x", 1, 1);
