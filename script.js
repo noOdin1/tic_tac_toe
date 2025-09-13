@@ -82,6 +82,8 @@ async function game() {
     });
   }
 
+  while (userEntry != "q") {
+  }
 
   // newGame.place("x", 1, 1);
   // newGame.place("o", 1, 2);
