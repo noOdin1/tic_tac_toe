@@ -38,7 +38,7 @@ function player() {
   return { incrementScore, getScore };
 }
 
-let keyMap = {
+const keyMap = {
   1: [2, 0],
   2: [2, 1],
   3: [2, 2],
