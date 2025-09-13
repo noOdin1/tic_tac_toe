@@ -62,6 +62,13 @@ async function game() {
   let computerPlayer = new player();
 
   let userEntry = 0;
+  /**
+   * NOTE: The method below was adopted after several tries with
+   *       using external functions and object. None was workable and
+   *       therefore this method was adopted. The source for this
+   *       solution:
+   *       https://stackoverflow.com/questions/17176046/pause-function-until-enter-key-is-pressed-javascript
+   */
 
 
   // newGame.place("x", 1, 1);
