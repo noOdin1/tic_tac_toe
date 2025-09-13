@@ -17,11 +17,15 @@ function tictactoe() {
     }
   }
 
+  function getBoardPosition(row, col) {
+    return board[row][col];
+  }
+
   function printBoard() {
     console.table(board);
   }
 
-  return { place, printBoard };
+  return { place, getBoardPosition, printBoard };
 }
 
 function player() {
