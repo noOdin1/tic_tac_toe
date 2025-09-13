@@ -103,6 +103,9 @@ async function round() {
         console.log("[game] That position is occupied.");
       }
     }
+    if (userEntry == "r") {
+      game.resetBoard();
+    }
   }
   console.log("[game] You have opted to quit");
 }
