@@ -56,8 +56,8 @@ const keyMap = {
 
 const allowedKeys = ["q", "y"];
 
-  let newGame = new tictactoe(); // initialize a new game
 async function round() {
+  let game = new tictactoe(); // initialize a new game
   let humanPlayer = new player();
   let computerPlayer = new player();
 
