@@ -88,6 +88,12 @@ async function game() {
     if (userEntry in keyMap) {
       [x, y] = keyMap[userEntry];
 
+      if (newGame.getBoardPosition(x, y) == " ") {
+        newGame.place("x", x, y);
+        newGame.printBoard();
+      } else {
+        console.log("[game] That position is occupied.");
+      }
     }
   }
 }
