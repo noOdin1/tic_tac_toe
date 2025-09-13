@@ -96,6 +96,7 @@ async function game() {
       }
     }
   }
+  console.log("[game] You have opted to quit");
 }
 
 game();
