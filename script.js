@@ -56,8 +56,8 @@ const keyMap = {
 
 const allowedKeys = ["q", "y"];
 
-async function game() {
   let newGame = new tictactoe(); // initialize a new game
+async function round() {
   let humanPlayer = new player();
   let computerPlayer = new player();
 
@@ -99,4 +99,4 @@ async function game() {
   console.log("[game] You have opted to quit");
 }
 
-game();
+round();
