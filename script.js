@@ -61,6 +61,7 @@ async function game() {
   let humanPlayer = new player();
   let computerPlayer = new player();
 
+  let userEntry = 0;
 
 
   // newGame.place("x", 1, 1);
