@@ -63,11 +63,6 @@ async function game() {
 
   document.addEventListener("keydown", userKeyPress);
 
-  newGame.place("x", 1, 1);
-  newGame.place("o", 1, 2);
-  // newGame.place("x",);
-  let [x, y] = keyMap[1];
-  console.log("value of x: " + x + ", y: " + y);
 
   // newGame.place("x", 1, 1);
   // newGame.place("o", 1, 2);
