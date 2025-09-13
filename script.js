@@ -61,7 +61,6 @@ async function game() {
   let humanPlayer = new player();
   let computerPlayer = new player();
 
-  document.addEventListener("keydown", userKeyPress);
 
 
   // newGame.place("x", 1, 1);
