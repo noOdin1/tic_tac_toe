@@ -74,3 +74,5 @@ function game() {
   newGame.printBoard();
   console.table(keyMap);
 }
+
+game();
