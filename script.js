@@ -62,7 +62,7 @@ const keyMap = {
   9: [0, 2],
 };
 
-const allowedKeys = ["q", "y"];
+const allowedKeys = ["q", "y", "r"];
 
 async function round() {
   let game = new tictactoe(); // initialize a new game
