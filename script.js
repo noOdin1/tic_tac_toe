@@ -86,6 +86,7 @@ async function game() {
     await userKeyEntry();
     console.log("[game] userEntry: " + userEntry);
     if (userEntry in keyMap) {
+      [x, y] = keyMap[userEntry];
 
     }
   }
