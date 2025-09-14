@@ -93,6 +93,13 @@ function userKeyPress() {
     });
   }
 
+  function getKeyEntry() {
+    return keyEntry;
+  }
+
+  return { getKeyEntry, userKeyEntry };
+}
+
   // function userKeyEntry() {
   //   return new Promise((resolve) => {
   //     document.addEventListener("keydown", onKeyHandler);
