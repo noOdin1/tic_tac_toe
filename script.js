@@ -96,6 +96,29 @@ function userKeyPress() {
   return { getKeyEntry, userKeyEntry };
 }
 
+function computerTurn() {
+  let boardPos = -1;
+  let xPos = -1;
+  let yPos = -1;
+
+  function getNewPos() {
+    xPos = Math.floor(Math.random() * 3);
+    yPos = Math.floor(Math.random() * 3);
+
+    boardPos = Object.keys(keyMap).find((key) => keyMap[key] === [xPos, yPos]);
+  }
+
+  function getXYPos() {
+    return [xPos, yPos];
+  }
+
+  function getBoardPos() {
+    return boardPos;
+  }
+
+  return { getNewPos, getXYPos, getBoardPos };
+}
+
 async function round() {
   let game = new tictactoe(); // initialize a new game
   let humanPlayer = new player();
