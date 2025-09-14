@@ -68,21 +68,24 @@ async function round() {
   let game = new tictactoe(); // initialize a new game
   let humanPlayer = new player();
   let computerPlayer = new player();
+function userKeyPress() {
+  let keyEntry = 0;
 
-  let userEntry = 0;
   /**
    * NOTE: The method below was adopted after several tries with
    *       using external functions and object. None was workable and
    *       therefore this method was adopted. The source for this
    *       solution:
    *       https://stackoverflow.com/questions/17176046/pause-function-until-enter-key-is-pressed-javascript
+   *       Using an object to house the function, and let closure to return
+   *       the value captured from the keyboard.
    */
   function userKeyEntry() {
     return new Promise((resolve) => {
       document.addEventListener("keydown", onKeyHandler);
       function onKeyHandler(event) {
         if (event.key in keyMap || allowedKeys.indexOf(event.key) != -1) {
-          userEntry = event.key;
+          keyEntry = event.key;
           document.removeEventListener("keydown", onKeyHandler);
           resolve();
         }
@@ -90,6 +93,18 @@ async function round() {
     });
   }
 
+  // function userKeyEntry() {
+  //   return new Promise((resolve) => {
+  //     document.addEventListener("keydown", onKeyHandler);
+  //     function onKeyHandler(event) {
+  //       if (event.key in keyMap || allowedKeys.indexOf(event.key) != -1) {
+  //         userEntry = event.key;
+  //         document.removeEventListener("keydown", onKeyHandler);
+  //         resolve();
+  //       }
+  //     }
+  //   });
+  // }
   while (userEntry != "q") {
     await userKeyEntry();
     console.log("[game] userEntry: " + userEntry);
