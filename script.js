@@ -64,10 +64,6 @@ const keyMap = {
 
 const allowedKeys = ["q", "y", "r"];
 
-async function round() {
-  let game = new tictactoe(); // initialize a new game
-  let humanPlayer = new player();
-  let computerPlayer = new player();
 function userKeyPress() {
   let keyEntry = 0;
 
@@ -100,6 +96,12 @@ function userKeyPress() {
   return { getKeyEntry, userKeyEntry };
 }
 
+async function round() {
+  let game = new tictactoe(); // initialize a new game
+  let humanPlayer = new player();
+  let computerPlayer = new player();
+
+  let userEntry = 0;
   // function userKeyEntry() {
   //   return new Promise((resolve) => {
   //     document.addEventListener("keydown", onKeyHandler);
@@ -112,8 +114,12 @@ function userKeyPress() {
   //     }
   //   });
   // }
+  let userInput = new userKeyPress();
+
   while (userEntry != "q") {
-    await userKeyEntry();
+    // await userKeyEntry();
+    await userInput.userKeyEntry();
+    userEntry = userInput.getKeyEntry();
     console.log("[game] userEntry: " + userEntry);
     if (userEntry in keyMap) {
       [x, y] = keyMap[userEntry];
