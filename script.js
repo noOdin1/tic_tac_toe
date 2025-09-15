@@ -36,20 +36,6 @@ function tictactoe() {
   return { place, getBoardPosition, resetBoard, printBoard };
 }
 
-function player() {
-  let score = 0;
-
-  function incrementScore() {
-    score += 1;
-  }
-
-  function getScore() {
-    return score;
-  }
-
-  return { incrementScore, getScore };
-}
-
 const keyMap = {
   1: [2, 0],
   2: [2, 1],
