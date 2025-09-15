@@ -105,6 +105,40 @@ function computerTurn() {
   return { getNewPos, getXYPos, getBoardPos };
 }
 
+/* Define prototype for game participants */
+/* User will be the template for human and computer */
+let user = {
+  name: "",
+  setName(name) {
+    this.name = name;
+  },
+  getName() {
+    return this.name;
+  },
+  incrementScore() {
+    this.score += 1;
+  },
+  decrementScore() {
+    this.score -= 1;
+  },
+  getScore() {
+    return this.score;
+  },
+  printScore() {
+    console.log("[" + this.name + "] score is " + this.score);
+  },
+};
+
+let human = {
+  score: 0,
+  __proto__: user, // the prototype
+};
+
+let computer = {
+  score: 0,
+  __proto__: user, // the prototype
+};
+
 async function round() {
   let game = new tictactoe(); // initialize a new game
   let humanPlayer = new player();
