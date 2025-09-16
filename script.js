@@ -1,4 +1,5 @@
 function tictactoe() {
+  let turn = 0;
   let board = [
     [" ", " ", " "],
     [" ", " ", " "],
@@ -15,6 +16,7 @@ function tictactoe() {
     if (mark == "x" || mark == "o") {
       board[row][col] = mark;
     }
+    turn += 1;
   }
 
   function getBoardPosition(row, col) {
