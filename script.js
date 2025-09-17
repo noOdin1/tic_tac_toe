@@ -154,39 +154,73 @@ const keyMap = {
 
 const allowedKeys = ["q", "y", "r"];
 
-function userKeyPress() {
-  let keyEntry = 0;
-
-  /**
-   * NOTE: The method below was adopted after several tries with
-   *       using external functions and object. None was workable and
-   *       therefore this method was adopted. The source for this
-   *       solution:
-   *       https://stackoverflow.com/questions/17176046/pause-function-until-enter-key-is-pressed-javascript
-   *       Using an object to house the function, and let closure to return
-   *       the value captured from the keyboard.
-   */
-  function userKeyEntry() {
-    return new Promise((resolve) => {
-      document.addEventListener("keydown", onKeyHandler);
-      function onKeyHandler(event) {
-        if (event.key in keyMap || allowedKeys.indexOf(event.key) != -1) {
-          keyEntry = event.key;
-          document.removeEventListener("keydown", onKeyHandler);
-          resolve();
+// function userKeyPress() {
+//   let keyEntry = 0;
+//
+//   /**
+//    * NOTE: The method below was adopted after several tries with
+//    *       using external functions and object. None was workable and
+//    *       therefore this method was adopted. The source for this
+//    *       solution:
+//    *       https://stackoverflow.com/questions/17176046/pause-function-until-enter-key-is-pressed-javascript
+//    *       Using an object to house the function, and let closure to return
+//    *       the value captured from the keyboard.
+//    */
+//   function userKeyEntry() {
+//     return new Promise((resolve) => {
+//       document.addEventListener("keydown", onKeyHandler);
+//       function onKeyHandler(event) {
+//         if (event.key in keyMap || allowedKeys.indexOf(event.key) != -1) {
+//           keyEntry = event.key;
+//           document.removeEventListener("keydown", onKeyHandler);
+//           resolve();
+//         }
+//       }
+//     });
+//   }
+//
+//   function getKeyEntry() {
+//     return keyEntry;
+//   }
+//
+//   return { getKeyEntry, userKeyEntry };
+// }
 
 let noOdin1sObjects = (function () {
+  function userKeyPress() {
+    // userKeyPress : function() {
+    keyEntry: 0;
+
+    /**
+     * NOTE: The method below was adopted after several tries with
+     *       using external functions and object. None was workable and
+     *       therefore this method was adopted. The source for this
+     *       solution:
+     *       https://stackoverflow.com/questions/17176046/pause-function-until-enter-key-is-pressed-javascript
+     *       Using an object to house the function, and let closure to return
+     *       the value captured from the keyboard.
+     */
+    function userKeyEntry() {
+      return new Promise((resolve) => {
+        document.addEventListener("keydown", onKeyHandler);
+        function onKeyHandler(event) {
+          if (event.key in keyMap || allowedKeys.indexOf(event.key) != -1) {
+            keyEntry = event.key;
+            document.removeEventListener("keydown", onKeyHandler);
+            resolve();
+          }
         }
-      }
-    });
+      });
+    }
+
+    function getKeyEntry() {
+      return keyEntry;
+    }
+
+    return { getKeyEntry, userKeyEntry };
   }
 
-  function getKeyEntry() {
-    return keyEntry;
-  }
-
-  return { getKeyEntry, userKeyEntry };
-}
+  return { userKeyPress };
 })();
 
 function computerTurn() {
