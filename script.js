@@ -223,7 +223,7 @@ let noOdin1sObjects = (function () {
   return { userKeyPress };
 })();
 
-function computerTurn() {
+function computersDecision() {
   let boardPos = -1;
   let xPos = -1;
   let yPos = -1;
