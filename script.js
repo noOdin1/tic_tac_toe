@@ -280,10 +280,6 @@ let computer = {
   __proto__: user, // the prototype
 };
 
-async function round() {
-  let game = new tictactoe(); // initialize a new game
-  let humanPlayer = new player();
-  let computerPlayer = new player();
 
 
   while (userEntry != "q") {
