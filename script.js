@@ -300,22 +300,28 @@ function computersMove(comp, game, mark) {
   }
 }
 
-
-  while (userEntry != "q") {
-    // await userKeyEntry();
-    await userInput.userKeyEntry();
-    userEntry = userInput.getKeyEntry();
+function humansMove(userEntry) {
+  let placement = false;
+  // human's turn
+  while (!placement) {
+    // await userInput.userKeyEntry();
+    // // await userKeyPress;
+    // userEntry = userInput.getKeyEntry();
     console.log("[game] userEntry: " + userEntry);
     if (userEntry in keyMap) {
       [x, y] = keyMap[userEntry];
 
       if (game.getBoardPosition(x, y) == " ") {
         game.place("x", x, y);
-        game.printBoard();
+        // game.printBoard();
+        placement = true;
       } else {
         console.log("[game] That position is occupied.");
       }
     }
+  }
+}
+
     if (userEntry == "r") {
       game.resetBoard();
       game.printBoard();
