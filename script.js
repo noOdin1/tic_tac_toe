@@ -1,17 +1,3 @@
-const keyMap = {
-  1: [2, 0],
-  2: [2, 1],
-  3: [2, 2],
-  4: [1, 0],
-  5: [1, 1],
-  6: [1, 2],
-  7: [0, 0],
-  8: [0, 1],
-  9: [0, 2],
-};
-
-const allowedKeys = ["q", "y", "r"];
-
 // function userKeyPress() {
 //   let keyEntry = 0;
 //
@@ -62,7 +48,10 @@ let noOdin1sObjects = (function () {
       return new Promise((resolve) => {
         document.addEventListener("keydown", onKeyHandler);
         function onKeyHandler(event) {
-          if (event.key in keyMap || allowedKeys.indexOf(event.key) != -1) {
+          if (
+            event.key in noOdin1sObjects.keyMap ||
+            allowedKeys.indexOf(event.key) != -1
+          ) {
             keyEntry = event.key;
             document.removeEventListener("keydown", onKeyHandler);
             resolve();
@@ -220,7 +209,21 @@ let noOdin1sObjects = (function () {
     };
   }
 
-  return { userKeyPress, tictactoe };
+  const keyMap = {
+    1: [2, 0],
+    2: [2, 1],
+    3: [2, 2],
+    4: [1, 0],
+    5: [1, 1],
+    6: [1, 2],
+    7: [0, 0],
+    8: [0, 1],
+    9: [0, 2],
+  };
+
+  const allowedKeys = ["q", "y", "r"];
+
+  return { keyMap, allowedKeys, userKeyPress, tictactoe };
 })();
 
 function computersDecision() {
@@ -232,7 +235,9 @@ function computersDecision() {
     xPos = Math.floor(Math.random() * 3);
     yPos = Math.floor(Math.random() * 3);
 
-    boardPos = Object.keys(keyMap).find((key) => keyMap[key] === [xPos, yPos]);
+    boardPos = Object.keys(noOdin1sObjects.keyMap).find(
+      (key) => noOdin1sObjects.keyMap[key] === [xPos, yPos],
+    );
   }
 
   function getXYPos() {
@@ -308,8 +313,8 @@ function humansMove(userEntry) {
     // // await userKeyPress;
     // userEntry = userInput.getKeyEntry();
     console.log("[game] userEntry: " + userEntry);
-    if (userEntry in keyMap) {
-      [x, y] = keyMap[userEntry];
+    if (userEntry in noOdin1sObjects.keyMap) {
+      [x, y] = noOdin1sObjects.keyMap[userEntry];
 
       if (game.getBoardPosition(x, y) == " ") {
         game.place("x", x, y);
@@ -338,8 +343,8 @@ async function round() {
       await userInput.userKeyEntry();
       userEntry = userInput.getKeyEntry();
       console.log("[game] userEntry: " + userEntry);
-      if (userEntry in keyMap) {
-        [x, y] = keyMap[userEntry];
+      if (userEntry in noOdin1sObjects.keyMap) {
+        [x, y] = noOdin1sObjects.keyMap[userEntry];
 
         if (game.getBoardPosition(x, y) == " ") {
           game.place("x", x, y);
