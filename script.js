@@ -1,6 +1,6 @@
 let noOdin1sObjects = (function () {
   function userKeyPress() {
-    keyEntry: 0;
+    let keyEntry = 0;
 
     /**
      * NOTE: The method below was adopted after several tries with
@@ -120,9 +120,9 @@ let noOdin1sObjects = (function () {
 
     function checkForWinCondition() {
       winCondition.forEach((cond) => {
-        [x0, y0] = cond[0];
-        [x1, y1] = cond[1];
-        [x2, y2] = cond[2];
+        let [x0, y0] = cond[0];
+        let [x1, y1] = cond[1];
+        let [x2, y2] = cond[2];
         if (
           getBoardPosition(x0, y0) != " " &&
           getBoardPosition(x1, y1) != " " &&
