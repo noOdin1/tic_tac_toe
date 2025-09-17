@@ -322,6 +322,7 @@ function humansMove(userEntry) {
   }
 }
 
+async function round() {
   let game = new tictactoe(); // initialize a new game
   let humanPlayer = user;
   let computerPlayer = computer;
