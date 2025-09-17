@@ -179,6 +179,15 @@ let noOdin1sObjects = (function () {
     return { getNewPos, getXYPos, getBoardPos };
   }
 
+  function placeMarker(xPos, yPos, marker, game) {
+    // successful marker placement
+    if (game.getBoardPosition(xPos, yPos) == " ") {
+      game.place(marker, xPos, yPos);
+      return true;
+    }
+    return false;
+  }
+
   const keyMap = {
     1: [2, 0],
     2: [2, 1],
@@ -194,7 +203,14 @@ let noOdin1sObjects = (function () {
   const allowedKeys = ["q", "y", "r"];
 
   return { keyMap, allowedKeys, userKeyPress, tictactoe };
+  return {
+    keyMap,
+    allowedKeys,
+    userKeyPress,
+    tictactoe,
     computersMove,
+    placeMarker,
+  };
 })();
 
 /* Define prototype for game participants */
@@ -231,20 +247,11 @@ let computer = {
   __proto__: user, // the prototype
 };
 
-
-function placeMarker(xPos, yPos, marker, game) {
-  // successful marker placement
-  if (game.getBoardPosition(xPos, yPos) == " ") {
-    game.place(marker, xPos, yPos);
-    return true;
-  }
-  return false;
-}
-
 async function round() {
   let game = noOdin1sObjects.tictactoe(); // initialize a new game
   let humanPlayer = user;
   let computerPlayer = computer;
+  let comp = noOdin1sObjects.computersMove();
 
   let userEntry = 0;
   let userInput = noOdin1sObjects.userKeyPress();
@@ -267,7 +274,9 @@ async function round() {
         marker = "o";
       }
       console.log("[round] xPos: " + xPos + ", yPos: " + yPos);
-      placement = placeMarker(xPos, yPos, marker, game) ? true : false;
+      placement = noOdin1sObjects.placeMarker(xPos, yPos, marker, game)
+        ? true
+        : false;
       humansTurn = placement ? !humansTurn : humansTurn;
     }
     game.printBoard();
