@@ -130,6 +130,14 @@ function tictactoe() {
     });
   }
 
+  return {
+    place,
+    getBoardPosition,
+    resetBoard,
+    printBoard,
+    getTurn,
+    checkForWinCondition,
+  };
 }
 
 const keyMap = {
