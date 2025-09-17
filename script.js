@@ -285,20 +285,6 @@ async function round() {
   let humanPlayer = new player();
   let computerPlayer = new player();
 
-  let userEntry = 0;
-  // function userKeyEntry() {
-  //   return new Promise((resolve) => {
-  //     document.addEventListener("keydown", onKeyHandler);
-  //     function onKeyHandler(event) {
-  //       if (event.key in keyMap || allowedKeys.indexOf(event.key) != -1) {
-  //         userEntry = event.key;
-  //         document.removeEventListener("keydown", onKeyHandler);
-  //         resolve();
-  //       }
-  //     }
-  //   });
-  // }
-  let userInput = new userKeyPress();
 
   while (userEntry != "q") {
     // await userKeyEntry();
