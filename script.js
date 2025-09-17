@@ -174,6 +174,8 @@ function userKeyPress() {
           keyEntry = event.key;
           document.removeEventListener("keydown", onKeyHandler);
           resolve();
+
+let noOdin1sObjects = (function () {
         }
       }
     });
@@ -185,6 +187,7 @@ function userKeyPress() {
 
   return { getKeyEntry, userKeyEntry };
 }
+})();
 
 function computerTurn() {
   let boardPos = -1;
