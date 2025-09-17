@@ -137,9 +137,11 @@ let noOdin1sObjects = (function () {
               getBoardPosition(x2, y2) == "o")
           ) {
             console.log("A winning pattern found.");
+            return true;
           }
         }
       });
+      return false;
     }
 
     return {
