@@ -154,6 +154,31 @@ let noOdin1sObjects = (function () {
     };
   }
 
+  function computersMove() {
+    let boardPos = -1;
+    let xPos = -1;
+    let yPos = -1;
+
+    function getNewPos() {
+      xPos = Math.floor(Math.random() * 3);
+      yPos = Math.floor(Math.random() * 3);
+
+      boardPos = Object.keys(noOdin1sObjects.keyMap).find(
+        (key) => noOdin1sObjects.keyMap[key] === [xPos, yPos],
+      );
+    }
+
+    function getXYPos() {
+      return [xPos, yPos];
+    }
+
+    function getBoardPos() {
+      return boardPos;
+    }
+
+    return { getNewPos, getXYPos, getBoardPos };
+  }
+
   const keyMap = {
     1: [2, 0],
     2: [2, 1],
@@ -169,32 +194,8 @@ let noOdin1sObjects = (function () {
   const allowedKeys = ["q", "y", "r"];
 
   return { keyMap, allowedKeys, userKeyPress, tictactoe };
+    computersMove,
 })();
-
-function computersDecision() {
-  let boardPos = -1;
-  let xPos = -1;
-  let yPos = -1;
-
-  function getNewPos() {
-    xPos = Math.floor(Math.random() * 3);
-    yPos = Math.floor(Math.random() * 3);
-
-    boardPos = Object.keys(noOdin1sObjects.keyMap).find(
-      (key) => noOdin1sObjects.keyMap[key] === [xPos, yPos],
-    );
-  }
-
-  function getXYPos() {
-    return [xPos, yPos];
-  }
-
-  function getBoardPos() {
-    return boardPos;
-  }
-
-  return { getNewPos, getXYPos, getBoardPos };
-}
 
 /* Define prototype for game participants */
 /* User will be the template for human and computer */
@@ -230,47 +231,6 @@ let computer = {
   __proto__: user, // the prototype
 };
 
-// /**
-//  * NOTE: This function works. It still has some short comings,
-//  *         1. If all the spaces were filled up, then while() will
-//  *            be an infinite loop;
-//  *         2. The placements are random and no strategy added.
-//
-//  **/
-// function computersMove(comp, game, mark) {
-//   let placement = false;
-//   // console.dir(game);
-//   while (!placement) {
-//     comp.getNewPos();
-//     [x, y] = comp.getXYPos();
-//     if (game.getBoardPosition(x, y) == " ") {
-//       game.place(mark, x, y);
-//       placement = true;
-//     }
-//   }
-// }
-//
-// function humansMove(userEntry) {
-//   let placement = false;
-//   // human's turn
-//   while (!placement) {
-//     // await userInput.userKeyEntry();
-//     // // await userKeyPress;
-//     // userEntry = userInput.getKeyEntry();
-//     console.log("[game] userEntry: " + userEntry);
-//     if (userEntry in noOdin1sObjects.keyMap) {
-//       [x, y] = noOdin1sObjects.keyMap[userEntry];
-//
-//       if (game.getBoardPosition(x, y) == " ") {
-//         game.place("x", x, y);
-//         // game.printBoard();
-//         placement = true;
-//       } else {
-//         console.log("[game] That position is occupied.");
-//       }
-//     }
-//   }
-// }
 
 function placeMarker(xPos, yPos, marker, game) {
   // successful marker placement
@@ -285,7 +245,6 @@ async function round() {
   let game = noOdin1sObjects.tictactoe(); // initialize a new game
   let humanPlayer = user;
   let computerPlayer = computer;
-  let comp = new computersDecision();
 
   let userEntry = 0;
   let userInput = noOdin1sObjects.userKeyPress();
