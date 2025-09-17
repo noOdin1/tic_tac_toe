@@ -272,7 +272,13 @@ let computer = {
 //   }
 // }
 
+function placeMarker(xPos, yPos, marker, game) {
+  // successful marker placement
+  if (game.getBoardPosition(xPos, yPos) == " ") {
+    game.place(marker, xPos, yPos);
+    return true;
   }
+  return false;
 }
 
 async function round() {
