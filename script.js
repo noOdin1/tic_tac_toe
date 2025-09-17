@@ -230,45 +230,48 @@ let computer = {
   __proto__: user, // the prototype
 };
 
-/**
- * NOTE: This function works. It still has some short comings,
- *         1. If all the spaces were filled up, then while() will
- *            be an infinite loop;
- *         2. The placements are random and no strategy added.
- 
- **/
-function computersMove(comp, game, mark) {
-  let placement = false;
-  // console.dir(game);
-  while (!placement) {
-    comp.getNewPos();
-    [x, y] = comp.getXYPos();
-    if (game.getBoardPosition(x, y) == " ") {
-      game.place(mark, x, y);
-      placement = true;
-    }
-  }
-}
+// /**
+//  * NOTE: This function works. It still has some short comings,
+//  *         1. If all the spaces were filled up, then while() will
+//  *            be an infinite loop;
+//  *         2. The placements are random and no strategy added.
+//
+//  **/
+// function computersMove(comp, game, mark) {
+//   let placement = false;
+//   // console.dir(game);
+//   while (!placement) {
+//     comp.getNewPos();
+//     [x, y] = comp.getXYPos();
+//     if (game.getBoardPosition(x, y) == " ") {
+//       game.place(mark, x, y);
+//       placement = true;
+//     }
+//   }
+// }
+//
+// function humansMove(userEntry) {
+//   let placement = false;
+//   // human's turn
+//   while (!placement) {
+//     // await userInput.userKeyEntry();
+//     // // await userKeyPress;
+//     // userEntry = userInput.getKeyEntry();
+//     console.log("[game] userEntry: " + userEntry);
+//     if (userEntry in noOdin1sObjects.keyMap) {
+//       [x, y] = noOdin1sObjects.keyMap[userEntry];
+//
+//       if (game.getBoardPosition(x, y) == " ") {
+//         game.place("x", x, y);
+//         // game.printBoard();
+//         placement = true;
+//       } else {
+//         console.log("[game] That position is occupied.");
+//       }
+//     }
+//   }
+// }
 
-function humansMove(userEntry) {
-  let placement = false;
-  // human's turn
-  while (!placement) {
-    // await userInput.userKeyEntry();
-    // // await userKeyPress;
-    // userEntry = userInput.getKeyEntry();
-    console.log("[game] userEntry: " + userEntry);
-    if (userEntry in noOdin1sObjects.keyMap) {
-      [x, y] = noOdin1sObjects.keyMap[userEntry];
-
-      if (game.getBoardPosition(x, y) == " ") {
-        game.place("x", x, y);
-        // game.printBoard();
-        placement = true;
-      } else {
-        console.log("[game] That position is occupied.");
-      }
-    }
   }
 }
 
