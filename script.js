@@ -322,6 +322,8 @@ function humansMove(userEntry) {
   }
 }
 
+
+    game.checkForWinCondition();
     if (userEntry == "r") {
       game.resetBoard();
       game.printBoard();
