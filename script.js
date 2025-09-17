@@ -322,6 +322,10 @@ function humansMove(userEntry) {
   }
 }
 
+  let game = new tictactoe(); // initialize a new game
+  let humanPlayer = user;
+  let computerPlayer = computer;
+  let compute = new computersDecision();
 
     game.checkForWinCondition();
     if (userEntry == "r") {
