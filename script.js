@@ -328,6 +328,9 @@ async function round() {
   let computerPlayer = computer;
   let compute = new computersDecision();
 
+  let userEntry = 0;
+  let userInput = noOdin1sObjects.userKeyPress();
+
     game.checkForWinCondition();
     if (userEntry == "r") {
       game.resetBoard();
