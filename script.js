@@ -279,7 +279,7 @@ async function round() {
   let game = noOdin1sObjects.tictactoe(); // initialize a new game
   let humanPlayer = user;
   let computerPlayer = computer;
-  let compute = new computersDecision();
+  let comp = new computersDecision();
 
   let userEntry = 0;
   let userInput = noOdin1sObjects.userKeyPress();
