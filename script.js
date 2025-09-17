@@ -343,16 +343,16 @@ async function round() {
       await userInput.userKeyEntry();
       userEntry = userInput.getKeyEntry();
       console.log("[game] userEntry: " + userEntry);
-      if (userEntry in noOdin1sObjects.keyMap) {
-        [x, y] = noOdin1sObjects.keyMap[userEntry];
+      // if (userEntry in noOdin1sObjects.keyMap) {
+      // }
+      [x, y] = noOdin1sObjects.keyMap[userEntry];
 
-        if (game.getBoardPosition(x, y) == " ") {
-          game.place("x", x, y);
-          // game.printBoard();
-          humanPlacement = true;
-        } else {
-          console.log("[game] That position is occupied.");
-        }
+      if (game.getBoardPosition(x, y) == " ") {
+        game.place("x", x, y);
+        // game.printBoard();
+        humanPlacement = true;
+      } else {
+        console.log("[game] That position is occupied.");
       }
     }
     game.printBoard();
