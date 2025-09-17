@@ -280,6 +280,25 @@ let computer = {
   __proto__: user, // the prototype
 };
 
+/**
+ * NOTE: This function works. It still has some short comings,
+ *         1. If all the spaces were filled up, then while() will
+ *            be an infinite loop;
+ *         2. The placements are random and no strategy added.
+ 
+ **/
+function computersMove(comp, game, mark) {
+  let placement = false;
+  // console.dir(game);
+  while (!placement) {
+    comp.getNewPos();
+    [x, y] = comp.getXYPos();
+    if (game.getBoardPosition(x, y) == " ") {
+      game.place(mark, x, y);
+      placement = true;
+    }
+  }
+}
 
 
   while (userEntry != "q") {
