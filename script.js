@@ -286,8 +286,24 @@ async function round() {
   let humansTurn = true;
 
   while (userEntry != "q") {
+    let placement = false;
+    let marker = 0;
+    let xPos = 0,
+      yPos = 0;
+    let choice = 0;
+    while (!placement) {
+      if (humansTurn) {
+        await userInput.userKeyEntry();
+        [xPos, yPos] = noOdin1sObjects.keyMap[userInput.getKeyEntry()];
+        marker = "x";
       } else {
+        comp.getNewPos();
+        [xPos, yPos] = comp.getXYPos();
+        marker = "o";
       }
+      console.log("[round] xPos: " + xPos + ", yPos: " + yPos);
+      placement = placeMarker(xPos, yPos, marker, game) ? true : false;
+      humansTurn = placement ? !humansTurn : humansTurn;
     }
     game.printBoard();
     game.checkForWinCondition();
