@@ -1,145 +1,3 @@
-function tictactoe() {
-  let turn = 0;
-  let board = [
-    [" ", " ", " "],
-    [" ", " ", " "],
-    [" ", " ", " "],
-  ];
-
-  const winCondition = [
-    [
-      [0, 0],
-      [0, 1],
-      [0, 2],
-    ],
-    [
-      [1, 0],
-      [1, 1],
-      [1, 2],
-    ],
-    [
-      [2, 0],
-      [2, 1],
-      [2, 2],
-    ],
-    [
-      [0, 0],
-      [1, 0],
-      [2, 0],
-    ],
-    [
-      [0, 1],
-      [1, 1],
-      [2, 1],
-    ],
-    [
-      [0, 2],
-      [1, 2],
-      [2, 2],
-    ],
-    [
-      [0, 0],
-      [1, 1],
-      [2, 2],
-    ],
-    [
-      [2, 0],
-      [1, 1],
-      [0, 2],
-    ],
-  ];
-
-  function place(mark, row, col) {
-    if (row < 0 || row > 2) {
-      return;
-    }
-    if (col < 0 || col > 2) {
-      return;
-    }
-    if (mark == "x" || mark == "o") {
-      board[row][col] = mark;
-    }
-    turn += 1;
-  }
-
-  function getBoardPosition(row, col) {
-    return board[row][col];
-  }
-
-  function printBoard() {
-    console.table(board);
-  }
-
-  function resetBoard() {
-    for (let i = 0; i <= 2; i++) {
-      for (let j = 0; j <= 2; j++) {
-        board[i][j] = " ";
-      }
-    }
-  }
-
-  function getTurn() {
-    return turn;
-  }
-
-  function checkForWinCondition() {
-    winCondition.forEach((cond) => {
-      [x0, y0] = cond[0];
-      [x1, y1] = cond[1];
-      [x2, y2] = cond[2];
-      console.log(
-        "\n[checkForWinCondition] 0 getBoardPosition(" +
-          x0 +
-          "," +
-          y0 +
-          ") = " +
-          getBoardPosition(x0, y0),
-      );
-      console.log(
-        "[checkForWinCondition] 1 getBoardPosition(" +
-          x1 +
-          "," +
-          y1 +
-          ") = " +
-          getBoardPosition(x1, y1),
-      );
-      console.log(
-        "[checkForWinCondition] 2 getBoardPosition(" +
-          x2 +
-          "," +
-          y2 +
-          ") = " +
-          getBoardPosition(x2, y2),
-      );
-      if (
-        getBoardPosition(x0, y0) != " " &&
-        getBoardPosition(x1, y1) != " " &&
-        getBoardPosition(x2, y2) != " "
-      ) {
-        if (
-          (getBoardPosition(x0, y0) == "x" &&
-            getBoardPosition(x1, y1) == "x" &&
-            getBoardPosition(x2, y2) == "x") ||
-          (getBoardPosition(x0, y0) == "o" &&
-            getBoardPosition(x1, y1) == "o" &&
-            getBoardPosition(x2, y2) == "o")
-        ) {
-          console.log("A winning pattern found.");
-        }
-      }
-    });
-  }
-
-  return {
-    place,
-    getBoardPosition,
-    resetBoard,
-    printBoard,
-    getTurn,
-    checkForWinCondition,
-  };
-}
-
 const keyMap = {
   1: [2, 0],
   2: [2, 1],
@@ -220,7 +78,149 @@ let noOdin1sObjects = (function () {
     return { getKeyEntry, userKeyEntry };
   }
 
-  return { userKeyPress };
+  function tictactoe() {
+    let turn = 0;
+    let board = [
+      [" ", " ", " "],
+      [" ", " ", " "],
+      [" ", " ", " "],
+    ];
+
+    const winCondition = [
+      [
+        [0, 0],
+        [0, 1],
+        [0, 2],
+      ],
+      [
+        [1, 0],
+        [1, 1],
+        [1, 2],
+      ],
+      [
+        [2, 0],
+        [2, 1],
+        [2, 2],
+      ],
+      [
+        [0, 0],
+        [1, 0],
+        [2, 0],
+      ],
+      [
+        [0, 1],
+        [1, 1],
+        [2, 1],
+      ],
+      [
+        [0, 2],
+        [1, 2],
+        [2, 2],
+      ],
+      [
+        [0, 0],
+        [1, 1],
+        [2, 2],
+      ],
+      [
+        [2, 0],
+        [1, 1],
+        [0, 2],
+      ],
+    ];
+
+    function place(mark, row, col) {
+      if (row < 0 || row > 2) {
+        return;
+      }
+      if (col < 0 || col > 2) {
+        return;
+      }
+      if (mark == "x" || mark == "o") {
+        board[row][col] = mark;
+      }
+      turn += 1;
+    }
+
+    function getBoardPosition(row, col) {
+      return board[row][col];
+    }
+
+    function printBoard() {
+      console.table(board);
+    }
+
+    function resetBoard() {
+      for (let i = 0; i <= 2; i++) {
+        for (let j = 0; j <= 2; j++) {
+          board[i][j] = " ";
+        }
+      }
+    }
+
+    function getTurn() {
+      return turn;
+    }
+
+    function checkForWinCondition() {
+      winCondition.forEach((cond) => {
+        [x0, y0] = cond[0];
+        [x1, y1] = cond[1];
+        [x2, y2] = cond[2];
+        console.log(
+          "\n[checkForWinCondition] 0 getBoardPosition(" +
+            x0 +
+            "," +
+            y0 +
+            ") = " +
+            getBoardPosition(x0, y0),
+        );
+        console.log(
+          "[checkForWinCondition] 1 getBoardPosition(" +
+            x1 +
+            "," +
+            y1 +
+            ") = " +
+            getBoardPosition(x1, y1),
+        );
+        console.log(
+          "[checkForWinCondition] 2 getBoardPosition(" +
+            x2 +
+            "," +
+            y2 +
+            ") = " +
+            getBoardPosition(x2, y2),
+        );
+        if (
+          getBoardPosition(x0, y0) != " " &&
+          getBoardPosition(x1, y1) != " " &&
+          getBoardPosition(x2, y2) != " "
+        ) {
+          if (
+            (getBoardPosition(x0, y0) == "x" &&
+              getBoardPosition(x1, y1) == "x" &&
+              getBoardPosition(x2, y2) == "x") ||
+            (getBoardPosition(x0, y0) == "o" &&
+              getBoardPosition(x1, y1) == "o" &&
+              getBoardPosition(x2, y2) == "o")
+          ) {
+            console.log("A winning pattern found.");
+          }
+        }
+      });
+    }
+
+    return {
+      place,
+      getBoardPosition,
+      resetBoard,
+      printBoard,
+      getTurn,
+      checkForWinCondition,
+    };
+  }
+
+  return { userKeyPress, tictactoe };
 })();
 
 function computersDecision() {
@@ -323,7 +323,7 @@ function humansMove(userEntry) {
 }
 
 async function round() {
-  let game = new tictactoe(); // initialize a new game
+  let game = noOdin1sObjects.tictactoe(); // initialize a new game
   let humanPlayer = user;
   let computerPlayer = computer;
   let compute = new computersDecision();
