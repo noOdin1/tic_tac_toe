@@ -1,38 +1,5 @@
-// function userKeyPress() {
-//   let keyEntry = 0;
-//
-//   /**
-//    * NOTE: The method below was adopted after several tries with
-//    *       using external functions and object. None was workable and
-//    *       therefore this method was adopted. The source for this
-//    *       solution:
-//    *       https://stackoverflow.com/questions/17176046/pause-function-until-enter-key-is-pressed-javascript
-//    *       Using an object to house the function, and let closure to return
-//    *       the value captured from the keyboard.
-//    */
-//   function userKeyEntry() {
-//     return new Promise((resolve) => {
-//       document.addEventListener("keydown", onKeyHandler);
-//       function onKeyHandler(event) {
-//         if (event.key in keyMap || allowedKeys.indexOf(event.key) != -1) {
-//           keyEntry = event.key;
-//           document.removeEventListener("keydown", onKeyHandler);
-//           resolve();
-//         }
-//       }
-//     });
-//   }
-//
-//   function getKeyEntry() {
-//     return keyEntry;
-//   }
-//
-//   return { getKeyEntry, userKeyEntry };
-// }
-
 let noOdin1sObjects = (function () {
   function userKeyPress() {
-    // userKeyPress : function() {
     keyEntry: 0;
 
     /**
@@ -156,30 +123,6 @@ let noOdin1sObjects = (function () {
         [x0, y0] = cond[0];
         [x1, y1] = cond[1];
         [x2, y2] = cond[2];
-        console.log(
-          "\n[checkForWinCondition] 0 getBoardPosition(" +
-            x0 +
-            "," +
-            y0 +
-            ") = " +
-            getBoardPosition(x0, y0),
-        );
-        console.log(
-          "[checkForWinCondition] 1 getBoardPosition(" +
-            x1 +
-            "," +
-            y1 +
-            ") = " +
-            getBoardPosition(x1, y1),
-        );
-        console.log(
-          "[checkForWinCondition] 2 getBoardPosition(" +
-            x2 +
-            "," +
-            y2 +
-            ") = " +
-            getBoardPosition(x2, y2),
-        );
         if (
           getBoardPosition(x0, y0) != " " &&
           getBoardPosition(x1, y1) != " " &&
