@@ -78,7 +78,10 @@ function tictactoe() {
     }
   }
 
-  return { place, getBoardPosition, resetBoard, printBoard };
+  function getTurn() {
+    return turn;
+  }
+
 }
 
 const keyMap = {
