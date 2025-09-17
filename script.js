@@ -331,6 +331,30 @@ async function round() {
   let userEntry = 0;
   let userInput = noOdin1sObjects.userKeyPress();
 
+  while (userEntry != "q") {
+    let humanPlacement = false;
+    // human's turn
+    while (!humanPlacement) {
+      await userInput.userKeyEntry();
+      userEntry = userInput.getKeyEntry();
+      console.log("[game] userEntry: " + userEntry);
+      if (userEntry in keyMap) {
+        [x, y] = keyMap[userEntry];
+
+        if (game.getBoardPosition(x, y) == " ") {
+          game.place("x", x, y);
+          // game.printBoard();
+          humanPlacement = true;
+        } else {
+          console.log("[game] That position is occupied.");
+        }
+      }
+    }
+    game.printBoard();
+
+    computersMove(compute, game, "o");
+    game.printBoard();
+
     game.checkForWinCondition();
     if (userEntry == "r") {
       game.resetBoard();
