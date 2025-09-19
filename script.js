@@ -324,6 +324,21 @@ async function round() {
         break;
       }
     }
+    if (game.countEmptySpaces() == 0) {
+      if (
+        confirm(`
+               Game has ended
+               There is no winner
+               Do you wish to continue?`)
+      ) {
+        game.resetBoard();
+        humansTurn = true;
+        console.clear();
+        game.printBoard();
+      } else {
+        break;
+      }
+    }
   }
   console.log("[game] You have opted to quit");
 }
