@@ -119,6 +119,10 @@ let noOdin1sObjects = (function () {
       return turn;
     }
 
+    function getWinner() {
+      return winner;
+    }
+
     function checkForWinCondition() {
       winCondition.forEach((cond) => {
         let [x0, y0] = cond[0];
