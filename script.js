@@ -300,6 +300,9 @@ async function round() {
       placement = noOdin1sObjects.placeMarker(xPos, yPos, marker, game)
         ? true
         : false;
+      if (!placement) {
+        console.log("Space already occupied, choose another");
+      }
       humansTurn = placement ? !humansTurn : humansTurn;
     }
     game.printBoard();
