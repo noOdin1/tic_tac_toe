@@ -279,6 +279,7 @@ async function round() {
   let userInput = noOdin1sObjects.userKeyPress();
   let humansTurn = true;
 
+  game.printBoard();
   while (true) {
     let placement = false;
     let marker = 0;
