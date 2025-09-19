@@ -127,6 +127,16 @@ let noOdin1sObjects = (function () {
       winner = -1;
     }
 
+    function countEmptySpaces() {
+      let count = 0;
+      for (let i = 0; i <= 2; i++) {
+        for (let j = 0; j <= 2; j++) {
+          count = getBoardPosition(i, j) == " " ? count + 1 : count;
+        }
+      }
+      return count;
+    }
+
     function checkForWinCondition() {
       winCondition.forEach((cond) => {
         let [x0, y0] = cond[0];
