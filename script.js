@@ -279,7 +279,7 @@ async function round() {
   let userInput = noOdin1sObjects.userKeyPress();
   let humansTurn = true;
 
-  while (userEntry != "q") {
+  while (true) {
     let placement = false;
     let marker = 0;
     let xPos = 0,
