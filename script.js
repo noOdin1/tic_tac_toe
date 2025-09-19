@@ -225,7 +225,6 @@ let noOdin1sObjects = (function () {
 
   const allowedKeys = ["q", "y", "r", "n"];
 
-  return { keyMap, allowedKeys, userKeyPress, tictactoe };
   return {
     keyMap,
     allowedKeys,
