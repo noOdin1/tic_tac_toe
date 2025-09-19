@@ -170,6 +170,9 @@ let noOdin1sObjects = (function () {
       resetBoard,
       printBoard,
       getTurn,
+      getWinner,
+      resetWinner,
+      countEmptySpaces,
       checkForWinCondition,
     };
   }
