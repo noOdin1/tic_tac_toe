@@ -223,7 +223,7 @@ let noOdin1sObjects = (function () {
     9: [0, 2],
   };
 
-  const allowedKeys = ["q", "y", "r"];
+  const allowedKeys = ["q", "y", "r", "n"];
 
   return { keyMap, allowedKeys, userKeyPress, tictactoe };
   return {
