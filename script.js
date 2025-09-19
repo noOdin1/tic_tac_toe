@@ -36,6 +36,7 @@ let noOdin1sObjects = (function () {
 
   function tictactoe() {
     let turn = 0;
+    let winner = -1;
     let board = [
       [" ", " ", " "],
       [" ", " ", " "],
