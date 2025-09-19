@@ -296,7 +296,7 @@ async function round() {
         [xPos, yPos] = comp.getXYPos();
         marker = "O";
       }
-      console.log("[round] xPos: " + xPos + ", yPos: " + yPos);
+      // console.log("[round] xPos: " + xPos + ", yPos: " + yPos);
       placement = noOdin1sObjects.placeMarker(xPos, yPos, marker, game)
         ? true
         : false;
