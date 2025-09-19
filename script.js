@@ -310,6 +310,20 @@ async function round() {
     // console.log(game.checkForWinCondition());
     if (game.checkForWinCondition()) {
       let winner = game.getWinner() == "X" ? "YOU" : "computer";
+      if (
+        confirm(`
+               Game has ended
+               The winner is ${winner}
+               Do you wish to continue?`)
+      ) {
+        game.resetBoard();
+        humansTurn = true;
+        console.clear();
+        game.printBoard();
+      } else {
+        break;
+      }
+    }
   }
   console.log("[game] You have opted to quit");
 }
