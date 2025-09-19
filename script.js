@@ -149,12 +149,12 @@ let noOdin1sObjects = (function () {
           getBoardPosition(x2, y2) != " "
         ) {
           if (
-            (getBoardPosition(x0, y0) == "x" &&
-              getBoardPosition(x1, y1) == "x" &&
-              getBoardPosition(x2, y2) == "x") ||
-            (getBoardPosition(x0, y0) == "o" &&
-              getBoardPosition(x1, y1) == "o" &&
-              getBoardPosition(x2, y2) == "o")
+            (getBoardPosition(x0, y0) == "X" &&
+              getBoardPosition(x1, y1) == "X" &&
+              getBoardPosition(x2, y2) == "X") ||
+            (getBoardPosition(x0, y0) == "O" &&
+              getBoardPosition(x1, y1) == "O" &&
+              getBoardPosition(x2, y2) == "O")
           ) {
             console.log("A winning pattern found.");
             return true;
