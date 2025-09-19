@@ -113,6 +113,7 @@ let noOdin1sObjects = (function () {
           board[i][j] = " ";
         }
       }
+      resetWinner();
     }
 
     function getTurn() {
