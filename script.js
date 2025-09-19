@@ -92,7 +92,7 @@ let noOdin1sObjects = (function () {
       if (col < 0 || col > 2) {
         return;
       }
-      if (mark == "x" || mark == "o") {
+      if (mark == "X" || mark == "O") {
         board[row][col] = mark;
       }
       turn += 1;
@@ -267,11 +267,11 @@ async function round() {
       if (humansTurn) {
         await userInput.userKeyEntry();
         [xPos, yPos] = noOdin1sObjects.keyMap[userInput.getKeyEntry()];
-        marker = "x";
+        marker = "X";
       } else {
         comp.getNewPos();
         [xPos, yPos] = comp.getXYPos();
-        marker = "o";
+        marker = "O";
       }
       console.log("[round] xPos: " + xPos + ", yPos: " + yPos);
       placement = noOdin1sObjects.placeMarker(xPos, yPos, marker, game)
