@@ -306,7 +306,10 @@ async function round() {
       humansTurn = placement ? !humansTurn : humansTurn;
     }
     game.printBoard();
-    game.checkForWinCondition();
+    // console.log("[**round**] Spaces not marked: " + game.countEmptySpaces());
+    // console.log(game.checkForWinCondition());
+    if (game.checkForWinCondition()) {
+      let winner = game.getWinner() == "X" ? "YOU" : "computer";
   }
   console.log("[game] You have opted to quit");
 }
