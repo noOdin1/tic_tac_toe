@@ -6,3 +6,28 @@
   color: black;
   box-sizing: border-box;
 }
+.main.container {
+  width: clamp(480px, 75%, 1440px);
+  height: 100vh;
+  /* background-color: lightgray; */
+  background-color: #ededed;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.left.container {
+  width: 35%;
+  height: 100vh;
+  /* border: 2px solid MediumVioletRed; */
+}
+
+.right.container {
+  width: 65%;
+  height: 100vh;
+  padding: 12em 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* border: 2px solid MediumVioletRed; */
+}
+
