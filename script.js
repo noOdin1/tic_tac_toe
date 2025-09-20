@@ -128,6 +128,29 @@ let noOdin1sObjects = (function () {
       winner = -1;
     }
 
+    function reverseKeyLookup(row, col) {
+      // let tmp = 0;
+      /**
+       * NOTE: There was an issue of using this block of code previously.
+       *       When the comparison was made between noOdin1sObjects.keyMap[key]
+       *       with [row, col], the condition returned was always false. I started
+       *       to printout the individual components of the statement and found that
+       *       the comparison is done between 2 objects. There's unknown composition
+       *       to the objects and that's why it fails. The solution is shown below,
+       *       to compare the basic values of keyMap and [row, col].
+       *       I might change this code so that there's actually a function to handle
+       *       the reverseKeyLookup.
+       */
+      // tmp = Object.keys(noOdin1sObjects.keyMap).find(
+      return Object.keys(noOdin1sObjects.keyMap).find(
+        // (key) => noOdin1sObjects.keyMap[key] == [row, col],
+        (key) =>
+          noOdin1sObjects.keyMap[key][0] === row &&
+          noOdin1sObjects.keyMap[key][1] === col,
+      );
+      // return tmp;
+    }
+
     function countEmptySpaces() {
       let count = 0;
       for (let i = 0; i <= 2; i++) {
@@ -169,6 +192,7 @@ let noOdin1sObjects = (function () {
       getBoardPosition,
       resetBoard,
       printBoard,
+      reverseKeyLookup,
       getTurn,
       getWinner,
       resetWinner,
