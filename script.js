@@ -270,6 +270,15 @@ let noOdin1sObjects = (function () {
     }
   }
 
+  /**
+   * Delay function, src:
+   *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
+   * As usual, the calling function must have 'async' and on the statement
+   * calling delay, it must be preceeded by 'await'.
+   **/
+  const delay = (milisecond) =>
+    new Promise((resolve) => setTimeout(resolve, milisecond));
+
   const keyMap = {
     1: [2, 0],
     2: [2, 1],
@@ -291,6 +300,9 @@ let noOdin1sObjects = (function () {
     tictactoe,
     computersMove,
     placeMarker,
+    btnFunction,
+    placeMarkerOnBtn,
+    delay,
   };
 })();
 
@@ -372,6 +384,7 @@ async function round() {
     }
     noOdin1sObjects.placeMarkerOnBtn(game, marker);
     game.printBoard();
+    await noOdin1sObjects.delay(250);
     // console.log("[**round**] Spaces not marked: " + game.countEmptySpaces());
     // console.log(game.checkForWinCondition());
     if (game.checkForWinCondition()) {
