@@ -244,6 +244,23 @@ let noOdin1sObjects = (function () {
     document.dispatchEvent(keypress_event);
   }
 
+  function placeMarkerOnBtn(game, marker) {
+    for (let i = 0; i <= 2; i++) {
+      for (let j = 0; j <= 2; j++) {
+        if (game.getBoardPosition(i, j) != " ") {
+          console.log("i: " + i + ", j: " + j);
+          let tmpPos = game.reverseKeyLookup(i, j);
+          console.log("[round] board position: " + tmpPos);
+          let tmpBtn = document.getElementById("button_" + tmpPos);
+          if (!tmpBtn.classList.contains("placed")) {
+            tmpBtn.classList.add("placed");
+            tmpBtn.textContent = marker;
+          }
+        }
+      }
+    }
+  }
+
   const keyMap = {
     1: [2, 0],
     2: [2, 1],
@@ -344,6 +361,7 @@ async function round() {
       }
       humansTurn = placement ? !humansTurn : humansTurn;
     }
+    noOdin1sObjects.placeMarkerOnBtn(game, marker);
     game.printBoard();
     // console.log("[**round**] Spaces not marked: " + game.countEmptySpaces());
     // console.log(game.checkForWinCondition());
