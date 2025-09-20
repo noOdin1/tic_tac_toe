@@ -6,6 +6,7 @@
   color: black;
   box-sizing: border-box;
 }
+
 .main.container {
   width: clamp(480px, 75%, 1440px);
   height: 100vh;
@@ -37,6 +38,10 @@ button {
   font-size: 6em;
   color: rgba(0, 0, 0, 0.05);
   border: 5px solid black;
+}
+
+button.placed {
+  color: rgba(0, 0, 0, 1);
 }
 
 #button_7,
