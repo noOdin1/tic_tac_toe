@@ -111,6 +111,15 @@ let noOdin1sObjects = (function () {
       for (let i = 0; i <= 2; i++) {
         for (let j = 0; j <= 2; j++) {
           board[i][j] = " ";
+          /* Resetting the web page board */
+          // let tmpId = noOdin1sObjects.reverseKeyLookup(i, j);
+          let tmpId = reverseKeyLookup(i, j);
+          // console.log("[resetBoard] tmpId: " + tmpId);
+          let tmpBtn = document.getElementById("button_" + tmpId);
+          if (tmpBtn.classList.contains("placed")) {
+            tmpBtn.classList.remove("placed");
+            tmpBtn.textContent = tmpId;
+          }
         }
       }
       resetWinner();
