@@ -127,3 +127,47 @@
 //   }
 // }
 
+      // console.table(keyMap);
+      // let tmp = Object.keys(noOdin1sObjects.keyMap).find(function (key) {
+      //   console.log(
+      //     "key: " +
+      //       key +
+      //       ", keyMap[key]: " +
+      //       keyMap[key] +
+      //       ", [row, col]: " +
+      //       [row, col],
+      //   );
+      //   if (noOdin1sObjects.keyMap[key] === [row, col]) {
+      //     console.log("found it");
+      //   }
+      //   noOdin1sObjects.keyMap[key] == [row, col];
+      // });
+
+      console.log(
+        "[reverseKeyLookup] typeof row: " +
+          typeof row +
+          ", typeof col: " +
+          typeof col +
+          ", typeof [row, col]: " +
+          typeof [row, col],
+      );
+      console.log(
+        "[reverseKeyLookup] typeof keyMap[0]: " +
+          typeof noOdin1sObjects.keyMap[7],
+      );
+      let tempNum = new Array(row, col);
+      console.log(
+        "[reverseKeyLookup] noOdin1sObjects.keyMap[8][0]: " +
+          noOdin1sObjects.keyMap[8][0] +
+          ", noOdin1sObjects.keyMap[8[1]: " +
+          noOdin1sObjects.keyMap[8][1],
+      );
+      // if (noOdin1sObjects.keyMap[7] === [row, col]) {
+      if (noOdin1sObjects.keyMap[7] === [row, col]) {
+        console.log("[reverseKeyLookup] Yes, they match");
+      }
+
+          let numKeyPadPos = Object.keys(noOdin1sObjects.keyMap).find(
+            (key) => noOdin1sObjects.keyMap[key] === [i, j],
+          );
+          console.log("[round] numKeyPadPos: " + numKeyPadPos);
