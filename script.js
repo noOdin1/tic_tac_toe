@@ -235,6 +235,15 @@ let noOdin1sObjects = (function () {
     return false;
   }
 
+  function btnFunction(event) {
+    console.log("[btnFunction] button id: " + event.target.id);
+
+    let btn_id = event.target.id.replace("button_", "");
+    const keypress_event = new KeyboardEvent("keydown", { key: `${btn_id}` });
+    // console.dir(this);
+    document.dispatchEvent(keypress_event);
+  }
+
   const keyMap = {
     1: [2, 0],
     2: [2, 1],
@@ -302,6 +311,12 @@ async function round() {
   let userEntry = 0;
   let userInput = noOdin1sObjects.userKeyPress();
   let humansTurn = true;
+
+  /* Adding eventListener to each buttons/space */
+  let btnCollection = document.getElementsByClassName("boardSpace");
+  Array.from(btnCollection).forEach((elem) =>
+    elem.addEventListener("click", noOdin1sObjects.btnFunction),
+  );
 
   game.printBoard();
   while (true) {
