@@ -1,6 +1,7 @@
 <h1>Tic Tac Toe Game - Odin Assignment</h1>
 This is the assignment for Javascript Objects.<br>
 <br>
+<pre>
 1. Store gameboard as an array                          [done]<br>
 2. Store gameboard inside a Gameboard object            [done]<br>
 3. Player's info are to be stored in as objects         [done]<br>
@@ -15,3 +16,4 @@ This is the assignment for Javascript Objects.<br>
 12. Basic random placement for computer/machine         [done]<br>
 13. User can use mouse to place marker                  [done]<br>
 14. User can use numeric keypad to place marker         [done]<br>
+</pre>
