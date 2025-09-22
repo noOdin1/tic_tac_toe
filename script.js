@@ -339,6 +339,7 @@ let noOdin1sObjects = (function () {
       human.getTurn() === "second" ? human.getScore() : computer.getScore();
   }
 
+  async function round(human) {
   /**
    * Delay function, src:
    *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
