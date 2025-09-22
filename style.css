@@ -23,7 +23,6 @@
   padding: 0.8em;
   display: flex;
   flex-direction: column;
-  border: 2px solid MediumVioletRed;
 }
 
 .playerScore {
@@ -40,10 +39,6 @@
 #secondPlayerName,
 #secondPlayerScore {
   font-size: 1.2em;
-}
-
-.playerScore > .score {
-  width: 40%;
 }
 
 #playerInfoForm {
