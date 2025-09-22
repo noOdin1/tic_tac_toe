@@ -396,6 +396,8 @@ let noOdin1sObjects = (function () {
       game.printBoard();
       await delay(250);
       if (game.checkForWinCondition()) {
+        let winner =
+          game.getWinner() === human.getMarker() ? "YOU" : "computer";
     }
   function startGame() {
     let markerToggle = document.getElementById("playersMarker");
