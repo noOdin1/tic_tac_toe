@@ -424,6 +424,13 @@ async function round() {
     elem.addEventListener("click", noOdin1sObjects.btnFunction),
   );
 
+  /* Method to disable the info entry area */
+  // let infoEntry = document.getElementsByTagName("fieldset");
+  // infoEntry[0].disabled = true;
+  console.log("[round] name: " + noOdin1sObjects.human.getName());
+  console.log("[round] turn: " + noOdin1sObjects.human.getTurn());
+  console.log("[round] marker: " + noOdin1sObjects.human.getMarker());
+
   game.printBoard();
   // while (true) {
   // TODO:
