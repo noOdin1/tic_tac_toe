@@ -390,6 +390,7 @@ let noOdin1sObjects = (function () {
         if (!placement) {
           console.log("Space already occupied, choose another");
         }
+        humansTurn = placement ? !humansTurn : humansTurn;
       }
     }
   /**
