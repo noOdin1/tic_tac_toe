@@ -387,6 +387,9 @@ let noOdin1sObjects = (function () {
           marker = human.getMarker() === "X" ? "O" : "X";
         }
         placement = placeMarker(xPos, yPos, marker, game) ? true : false;
+        if (!placement) {
+          console.log("Space already occupied, choose another");
+        }
       }
     }
   /**
