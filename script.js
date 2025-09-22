@@ -343,6 +343,16 @@ let noOdin1sObjects = (function () {
     let game = tictactoe(); // initialize a new game
     let computerPlayer = computer;
     let comp = computersMove();
+
+    console.log(
+      "[round] human name: " +
+        human.getName() +
+        ", turn: " +
+        human.getTurn() +
+        ", marker: " +
+        human.getMarker(),
+    );
+
   /**
    * Delay function, src:
    *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
