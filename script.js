@@ -404,6 +404,21 @@ let noOdin1sObjects = (function () {
           computer.incrementScore();
         }
         showScore();
+        await delay(100);
+        if (
+          confirm(`
+               Game has ended
+               The winner is ${winner}
+               Do you wish to continue?`)
+        ) {
+          game.resetBoard();
+          game.printBoard();
+          humansTurn = human.getTurn() === "first" ? true : false;
+          console.clear();
+        } else {
+          break;
+        }
+      }
     }
   function startGame() {
     let markerToggle = document.getElementById("playersMarker");
