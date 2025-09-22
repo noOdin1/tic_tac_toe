@@ -419,7 +419,23 @@ let noOdin1sObjects = (function () {
           break;
         }
       }
+      if (game.countEmptySpaces() == 0) {
+        if (
+          confirm(`
+               Game has ended
+               There is no winner
+               Do you wish to continue?`)
+        ) {
+          game.resetBoard();
+          game.printBoard();
+          humansTurn = human.getTurn() === "first" ? true : false;
+          console.clear();
+        } else {
+          break;
+        }
+      }
     }
+    console.log("[game] You have opted to quit");
   function startGame() {
     let markerToggle = document.getElementById("playersMarker");
     markerToggle.addEventListener("click", noOdin1sObjects.toggleMarker);
