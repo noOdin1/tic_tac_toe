@@ -394,6 +394,7 @@ let noOdin1sObjects = (function () {
       }
       placeMarkerOnBtn(game, marker);
       game.printBoard();
+      await delay(250);
     }
   /**
    * Delay function, src:
