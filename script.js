@@ -298,6 +298,11 @@ let noOdin1sObjects = (function () {
     // The following needs to be explicitly 'reset'
     document.getElementById("turnTxt").textContent = "first";
     document.getElementById("markerTxt").textContent = "X";
+
+  function disableFormItems() {
+    let item1 = (document.getElementById("playerNameInput").disabled = true);
+    let items = document.getElementsByClassName("toLighten");
+    Array.from(items).forEach((elem) => elem.classList.add("lighten"));
   }
 
   function placeMarkerOnBtn(game, marker) {
