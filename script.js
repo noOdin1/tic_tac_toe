@@ -263,6 +263,16 @@ let noOdin1sObjects = (function () {
     }
   }
 
+  function toggleMarker(event) {
+    if (this.checked) {
+      markerTxt.textContent = "O";
+      document.getElementById("playersMarkerHidden").disabled = true;
+    } else {
+      markerTxt.textContent = "X";
+      document.getElementById("playersMarkerHidden").disabled = false;
+    }
+  }
+
   function placeMarkerOnBtn(game, marker) {
     for (let i = 0; i <= 2; i++) {
       for (let j = 0; j <= 2; j++) {
