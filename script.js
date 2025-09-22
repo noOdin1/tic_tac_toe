@@ -396,6 +396,16 @@ let noOdin1sObjects = (function () {
       game.printBoard();
       await delay(250);
     }
+  function startGame() {
+    let markerToggle = document.getElementById("playersMarker");
+    markerToggle.addEventListener("click", noOdin1sObjects.toggleMarker);
+    let turnToggle = document.getElementById("playerTurn");
+    playerTurn.addEventListener("click", noOdin1sObjects.toggleTurn);
+
+    let form = document.getElementById("playerInfoForm");
+    form.addEventListener("submit", noOdin1sObjects.formSubmit);
+  }
+
   /**
    * Delay function, src:
    *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
