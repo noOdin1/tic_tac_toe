@@ -402,6 +402,9 @@ let noOdin1sObjects = (function () {
     user,
     human,
     computer,
+    toggleMarker,
+    toggleTurn,
+    formSubmit,
   };
 })();
 
