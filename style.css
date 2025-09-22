@@ -35,8 +35,11 @@
   font-size: 1.2em;
 }
 
-.playerScore > .name {
-  width: 60%;
+#firstPlayerName,
+#firstPlayerScore,
+#secondPlayerName,
+#secondPlayerScore {
+  font-size: 1.2em;
 }
 
 .playerScore > .score {
