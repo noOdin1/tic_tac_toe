@@ -279,6 +279,55 @@ let noOdin1sObjects = (function () {
   const delay = (milisecond) =>
     new Promise((resolve) => setTimeout(resolve, milisecond));
 
+  /* Define prototype for game participants */
+  /* User will be the template for human and computer */
+  let user = {
+    name: "",
+    marker: "X",
+    turn: "first",
+    setName(name) {
+      this.name = name;
+    },
+    getName() {
+      return this.name;
+    },
+    incrementScore() {
+      this.score += 1;
+    },
+    decrementScore() {
+      this.score -= 1;
+    },
+    getScore() {
+      return this.score;
+    },
+    getMarker() {
+      return this.marker;
+    },
+    switchMarker() {
+      this.marker = this.marker === "X" ? "O" : "X";
+    },
+    getTurn() {
+      return this.turn;
+    },
+    switchTurn() {
+      this.turn = this.turn === "first" ? "second" : "first";
+    },
+    printScore() {
+      console.log("[" + this.name + "] score is " + this.score);
+    },
+  };
+
+  let human = {
+    score: 0,
+    turn: "first",
+    __proto__: user, // the prototype
+  };
+
+  let computer = {
+    score: 0,
+    __proto__: user, // the prototype
+  };
+
   const keyMap = {
     1: [2, 0],
     2: [2, 1],
@@ -303,6 +352,9 @@ let noOdin1sObjects = (function () {
     btnFunction,
     placeMarkerOnBtn,
     delay,
+    user,
+    human,
+    computer,
   };
 })();
 
