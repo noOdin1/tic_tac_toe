@@ -392,6 +392,7 @@ let noOdin1sObjects = (function () {
         }
         humansTurn = placement ? !humansTurn : humansTurn;
       }
+      placeMarkerOnBtn(game, marker);
     }
   /**
    * Delay function, src:
