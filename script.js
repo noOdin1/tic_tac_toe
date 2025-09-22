@@ -376,6 +376,8 @@ let noOdin1sObjects = (function () {
       let xPos = 0,
         yPos = 0;
       let choice = 0;
+      while (!placement) {
+      }
     }
   /**
    * Delay function, src:
