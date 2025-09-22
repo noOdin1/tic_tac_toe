@@ -328,6 +328,17 @@ let noOdin1sObjects = (function () {
     }
   }
 
+  function showScore() {
+    /* Display initial score on scoreboard */
+    let firstPlayerScoreDisplay = document.getElementById("firstPlayerScore");
+    let secondPlayerScoreDisplay = document.getElementById("secondPlayerScore");
+
+    firstPlayerScoreDisplay.textContent =
+      human.getTurn() === "first" ? human.getScore() : computer.getScore();
+    secondPlayerScoreDisplay.textContent =
+      human.getTurn() === "second" ? human.getScore() : computer.getScore();
+  }
+
   /**
    * Delay function, src:
    *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
