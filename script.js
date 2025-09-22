@@ -353,6 +353,7 @@ let noOdin1sObjects = (function () {
         human.getMarker(),
     );
 
+    let userEntry = 0;
   /**
    * Delay function, src:
    *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
