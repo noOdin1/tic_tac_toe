@@ -371,6 +371,11 @@ let noOdin1sObjects = (function () {
     game.printBoard();
     while (true) {
       showScore();
+      let placement = false;
+      let marker = 0;
+      let xPos = 0,
+        yPos = 0;
+      let choice = 0;
     }
   /**
    * Delay function, src:
