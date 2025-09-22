@@ -398,6 +398,11 @@ let noOdin1sObjects = (function () {
       if (game.checkForWinCondition()) {
         let winner =
           game.getWinner() === human.getMarker() ? "YOU" : "computer";
+        if (winner === "YOU") {
+          human.incrementScore();
+        } else {
+          computer.incrementScore();
+        }
     }
   function startGame() {
     let markerToggle = document.getElementById("playersMarker");
