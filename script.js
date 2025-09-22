@@ -341,6 +341,7 @@ let noOdin1sObjects = (function () {
 
   async function round(human) {
     let game = tictactoe(); // initialize a new game
+    let computerPlayer = computer;
   /**
    * Delay function, src:
    *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
