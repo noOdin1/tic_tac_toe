@@ -362,6 +362,12 @@ let noOdin1sObjects = (function () {
       elem.addEventListener("click", btnFunction),
     );
 
+    /* Display name on scoreboard */
+    document.getElementById("firstPlayerName").textContent =
+      human.getTurn() === "first" ? human.getName() : "computer";
+    document.getElementById("secondPlayerName").textContent =
+      human.getTurn() === "second" ? human.getName() : "computer";
+
   /**
    * Delay function, src:
    *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
