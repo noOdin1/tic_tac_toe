@@ -273,6 +273,33 @@ let noOdin1sObjects = (function () {
     }
   }
 
+  function formSubmit(event) {
+    event.preventDefault();
+
+    // const data = new FormData(form);
+    const data = new FormData(this);
+    for (const [name, value] of data) {
+      console.log("[formSubmit] name: " + name + ", value: " + value);
+    }
+    // let tmpBook = new Book();
+    for (const [name, value] of data) {
+      if (name === "playersName") {
+        human.setName(value);
+      }
+      if (name === "playersTurn") {
+        human.getTurn() !== value ? human.switchTurn() : null;
+      }
+      if (name === "playersMarker") {
+        human.getMarker() !== value ? human.switchMarker() : null;
+      }
+    }
+    /* Reset the player's information form */
+    this.reset();
+    // The following needs to be explicitly 'reset'
+    document.getElementById("turnTxt").textContent = "first";
+    document.getElementById("markerTxt").textContent = "X";
+  }
+
   function placeMarkerOnBtn(game, marker) {
     for (let i = 0; i <= 2; i++) {
       for (let j = 0; j <= 2; j++) {
