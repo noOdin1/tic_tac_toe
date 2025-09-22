@@ -436,6 +436,9 @@ let noOdin1sObjects = (function () {
       }
     }
     console.log("[game] You have opted to quit");
+    window.location.reload();
+  }
+
   function startGame() {
     let markerToggle = document.getElementById("playersMarker");
     markerToggle.addEventListener("click", noOdin1sObjects.toggleMarker);
