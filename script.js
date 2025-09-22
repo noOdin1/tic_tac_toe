@@ -393,6 +393,7 @@ let noOdin1sObjects = (function () {
         humansTurn = placement ? !humansTurn : humansTurn;
       }
       placeMarkerOnBtn(game, marker);
+      game.printBoard();
     }
   /**
    * Delay function, src:
