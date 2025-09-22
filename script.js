@@ -425,7 +425,9 @@ async function round() {
   );
 
   game.printBoard();
-  while (true) {
+  // while (true) {
+  // TODO:
+  while (false) {
     let placement = false;
     let marker = 0;
     let xPos = 0,
