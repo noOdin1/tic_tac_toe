@@ -299,6 +299,12 @@ let noOdin1sObjects = (function () {
     document.getElementById("turnTxt").textContent = "first";
     document.getElementById("markerTxt").textContent = "X";
 
+    /* Making the fieldset disabled is not enough. */
+    document.getElementById("formFieldset").disabled = true;
+    disableFormItems();
+    round(human);
+  }
+
   function disableFormItems() {
     let item1 = (document.getElementById("playerNameInput").disabled = true);
     let items = document.getElementsByClassName("toLighten");
