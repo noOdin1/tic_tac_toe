@@ -407,8 +407,8 @@ let noOdin1sObjects = (function () {
 
 async function round() {
   let game = noOdin1sObjects.tictactoe(); // initialize a new game
-  let humanPlayer = user;
-  let computerPlayer = computer;
+  let humanPlayer = noOdin1sObjects.user;
+  let computerPlayer = noOdin1sObjects.computer;
   let comp = noOdin1sObjects.computersMove();
 
   let userEntry = 0;
