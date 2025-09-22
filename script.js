@@ -253,6 +253,16 @@ let noOdin1sObjects = (function () {
     document.dispatchEvent(keypress_event);
   }
 
+  function toggleTurn(event) {
+    if (this.checked) {
+      turnTxt.textContent = "second";
+      document.getElementById("playerTurnHidden").disabled = true;
+    } else {
+      turnTxt.textContent = "first";
+      document.getElementById("playerTurnHidden").disabled = false;
+    }
+  }
+
   function placeMarkerOnBtn(game, marker) {
     for (let i = 0; i <= 2; i++) {
       for (let j = 0; j <= 2; j++) {
