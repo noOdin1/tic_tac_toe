@@ -45,6 +45,14 @@
   margin-top: 2em;
 }
 
+fieldset {
+  border: 2px solid black;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Start of slider definition */
 /*   source: https://www.w3schools.com/howto/howto_css_switch.asp */
 /* The switch - the box around the slider */
