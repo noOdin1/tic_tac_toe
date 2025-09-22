@@ -403,6 +403,7 @@ let noOdin1sObjects = (function () {
         } else {
           computer.incrementScore();
         }
+        showScore();
     }
   function startGame() {
     let markerToggle = document.getElementById("playersMarker");
