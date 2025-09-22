@@ -419,6 +419,14 @@ async function round() {
   let humansTurn = true;
 
   /* Adding eventListener to each buttons/space */
+  let markerToggle = document.getElementById("playersMarker");
+  markerToggle.addEventListener("click", noOdin1sObjects.toggleMarker);
+  let turnToggle = document.getElementById("playerTurn");
+  playerTurn.addEventListener("click", noOdin1sObjects.toggleTurn);
+
+  let form = document.getElementById("playerInfoForm");
+  form.addEventListener("submit", noOdin1sObjects.formSubmit);
+
   let btnCollection = document.getElementsByClassName("boardSpace");
   Array.from(btnCollection).forEach((elem) =>
     elem.addEventListener("click", noOdin1sObjects.btnFunction),
