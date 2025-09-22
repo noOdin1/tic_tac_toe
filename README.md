@@ -16,4 +16,8 @@ This is the assignment for Javascript Objects.<br>
 12. Basic random placement for computer/machine         [done]
 13. User can use mouse to place marker                  [done]
 14. User can use numeric keypad to place marker         [done]
+15. User can switch being the first player or second    [done]
+16. User can switch markers to play                     [done]
+17. Scoreboard display the players' name                [done]
+17. Scoreboard display the players score                [done]
 </pre>
