@@ -381,6 +381,11 @@ let noOdin1sObjects = (function () {
           await userInput.userKeyEntry();
           [xPos, yPos] = keyMap[userInput.getKeyEntry()];
           marker = human.getMarker();
+        } else {
+          comp.getNewPos();
+          [xPos, yPos] = comp.getXYPos();
+          marker = human.getMarker() === "X" ? "O" : "X";
+        }
       }
     }
   /**
