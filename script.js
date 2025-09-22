@@ -386,6 +386,7 @@ let noOdin1sObjects = (function () {
           [xPos, yPos] = comp.getXYPos();
           marker = human.getMarker() === "X" ? "O" : "X";
         }
+        placement = placeMarker(xPos, yPos, marker, game) ? true : false;
       }
     }
   /**
