@@ -354,6 +354,7 @@ let noOdin1sObjects = (function () {
     );
 
     let userEntry = 0;
+    let userInput = userKeyPress();
   /**
    * Delay function, src:
    *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
