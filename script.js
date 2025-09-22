@@ -370,6 +370,7 @@ let noOdin1sObjects = (function () {
 
     game.printBoard();
     while (true) {
+      showScore();
     }
   /**
    * Delay function, src:
