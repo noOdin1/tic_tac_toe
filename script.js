@@ -355,6 +355,8 @@ let noOdin1sObjects = (function () {
 
     let userEntry = 0;
     let userInput = userKeyPress();
+    let humansTurn = human.getTurn() === "first" ? true : false;
+
   /**
    * Delay function, src:
    *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
