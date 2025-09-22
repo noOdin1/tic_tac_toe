@@ -357,6 +357,11 @@ let noOdin1sObjects = (function () {
     let userInput = userKeyPress();
     let humansTurn = human.getTurn() === "first" ? true : false;
 
+    let btnCollection = document.getElementsByClassName("boardSpace");
+    Array.from(btnCollection).forEach((elem) =>
+      elem.addEventListener("click", btnFunction),
+    );
+
   /**
    * Delay function, src:
    *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
