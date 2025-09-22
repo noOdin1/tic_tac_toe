@@ -377,6 +377,10 @@ let noOdin1sObjects = (function () {
         yPos = 0;
       let choice = 0;
       while (!placement) {
+        if (humansTurn) {
+          await userInput.userKeyEntry();
+          [xPos, yPos] = keyMap[userInput.getKeyEntry()];
+          marker = human.getMarker();
       }
     }
   /**
