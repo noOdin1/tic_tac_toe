@@ -369,6 +369,8 @@ let noOdin1sObjects = (function () {
       human.getTurn() === "second" ? human.getName() : "computer";
 
     game.printBoard();
+    while (true) {
+    }
   /**
    * Delay function, src:
    *   https://stackoverflow.com/questions/14226803/wait-5-seconds-before-executing-next-line
