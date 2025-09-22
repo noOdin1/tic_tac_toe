@@ -20,7 +20,11 @@
 .left.container {
   width: 40%;
   height: 100vh;
-  /* border: 2px solid MediumVioletRed; */
+  padding: 0.8em;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid MediumVioletRed;
+}
 
 /* Start of slider definition */
 /*   source: https://www.w3schools.com/howto/howto_css_switch.asp */
