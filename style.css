@@ -62,6 +62,42 @@ fieldset > button {
   color: rgba(0, 0, 0, 0.05);
 }
 
+legend {
+  font-size: 1.2rem;
+}
+
+#playerNameInput {
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+#turnFirstDiv,
+#playersMarkerDiv {
+  width: 95%;
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+}
+
+.switch {
+  margin-left: 1.4em;
+}
+
+#turnTxt,
+#markerTxt {
+  margin-left: 0;
+}
+
+.inputPromptTxt,
+#turnFirstDiv > span,
+#playersMarkerDiv > span {
+  font-size: 1.2rem;
+}
+
+.inputPromptTxt {
+  width: 88%;
+}
 
 #startGameBtn {
   font-size: 1.5rem;
