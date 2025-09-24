@@ -32,6 +32,7 @@
 
 .playerScore p {
   font-size: 1.2em;
+  padding-left: 0.5em;
 }
 
 #firstPlayerName,
@@ -75,7 +76,7 @@ legend {
 
 #turnFirstDiv,
 #playersMarkerDiv {
-  width: 95%;
+  width: 96%;
   display: grid;
   grid-template-columns: 2fr 3fr 1fr;
 }
@@ -87,6 +88,11 @@ legend {
 #turnTxt,
 #markerTxt {
   margin-left: 0;
+}
+
+#turnFirstDiv > label,
+#playersMarkerDiv > label {
+  margin-left: 3em;
 }
 
 .inputPromptTxt,
@@ -102,6 +108,8 @@ legend {
 #startGameBtn {
   font-size: 1.5rem;
   padding: 0.2em;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
   border-radius: 0.5em;
 }
 
