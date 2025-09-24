@@ -419,7 +419,12 @@ let noOdin1sObjects = (function () {
           break;
         }
       }
-      if (game.countEmptySpaces() == 0) {
+      /* Added the check for win condition so that the following is prevented:
+       * - The board is filled up
+       * - Somebody wins
+       * This clearly will trigger both condition.
+       **/
+      if (game.countEmptySpaces() === 0 && !game.checkForWinCondition()) {
         if (
           confirm(`
                Game has ended
